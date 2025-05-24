@@ -1,0 +1,60 @@
+# src/configs/rac_resnet50_config.yaml
+# Specific Configuration for RAC with ResNet-50
+
+# --- General Project Settings ---
+experiment_name: "rac_resnet50_agricultural_product_A_16shot" # Example: More descriptive name
+seed: 123 # Specific seed for this experiment run for reproducibility
+
+# --- Data Settings ---
+dataset_name: "product_A_authentic_vs_counterfeit" # Name of the specific dataset being used
+num_classes: 2 # Example: 0 for authentic, 1 for counterfeit for Product A
+image_size: 224 # Standard for ResNet-50, but confirm if CLIP's ResNet-50 uses a different default
+
+# --- Few-Shot Learning Settings (if this is a few-shot experiment) ---
+# n_shot: 16
+# n_way: 2 # If distinguishing between authentic/counterfeit of one product type in a few-shot setup
+# n_query: 15
+
+# --- Model Settings ---
+clip_model_name: "RN50" # Specifies ResNet-50 as the CLIP backbone
+feature_dim: 1024 # Output dimension of CLIP's ResNet-50 image encoder
+
+# --- RAC Specific Module Settings ---
+# Assuming RAC conceptually mirrors RAC's modules (MFA, IRA, ALF)
+# Enable and configure modules as needed for this ResNet-50 based experiment.
+rac_modules:
+  mfa: # Multi-Feature Aggregation (conceptual equivalent of MAF)
+    enabled: true
+    fusion_type: "WF" # Weighted Fusion, as an example. Could be "LF" (Learnable Fusion).
+    projector_type: "attention_pool" # Typically used with ResNet architectures in CLIP.
+    num_levels: 4 # Number of ResNet blocks' outputs to fuse.
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within MFA.
+    # image_encoder_channels: [256, 512, 1024, 2048] # Example channel dimensions from ResNet-50 blocks (before projection by CLIP)
+                                                  # These might be needed if adapters are applied before CLIP's own projection.
+                                                  # If applied to CLIP's multi-level features directly, dimensions would be different (e.g., all 1024).
+  ira: # Inter-class Ambiguity Reduction (conceptual equivalent of ICD)
+    enabled: true
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within IRA.
+  alf: # Adaptive Logits Fusion
+    enabled: true
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within the alpha generator.
+
+# --- Training Settings ---
+# Override base settings if necessary for this specific backbone or dataset
+epochs: 75 # May need more or fewer epochs depending on the dataset and model complexity
+batch_size: 32 # Adjust based on GPU memory with ResNet-50
+learning_rate: 0.0008 # Fine-tune learning rate for ResNet-50
+# weight_decay: 0.005
+# lr_scheduler: "cosine"
+# warmup_epochs: 3
+
+# --- Loss Settings ---
+# Assuming similar loss structure to RAC
+lambda_tradeoff_similarity: 0.8 # Specific trade-off for the similarity loss for this run
+
+# --- Logging and Saving ---
+# checkpoint_dir: "./saved_models/rac_resnet50_runs/" # More specific checkpoint directory
+
+# --- Environment Settings ---
+# device: "cuda"
+# gpus: [0] # Specify GPU to use

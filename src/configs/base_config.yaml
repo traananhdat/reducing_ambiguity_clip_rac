@@ -1,0 +1,67 @@
+# Base Configuration for RAC Project
+
+# --- General Project Settings ---
+project_name: "reducing_ambiguity_clip_rac"
+# experiment_name: "base_run" # Can be overridden by specific configs
+# seed: 42 # For reproducibility
+
+# --- Data Settings ---
+data_root: "./data/" # Root directory for all data
+dataset_name: "agricultural_products" # Or a more specific dataset identifier
+num_classes: null # To be defined in specific task/dataset configs (e.g., 2 for auth/counterfeit, or N for N-way classification)
+image_size: 224 # Standard image size, can be overridden
+# num_workers: 4 # For DataLoader
+
+# --- Few-Shot Learning Settings (if applicable) ---
+# n_shot: 1 # Number of shots (examples per class in support set)
+# n_way: 5  # Number of ways (classes per task)
+# n_query: 15 # Number of query examples per class per task
+# n_tasks_per_epoch: 100 # Number of few-shot tasks to generate per epoch
+
+# --- Model Settings ---
+# clip_model_name: "ViT-B/32" # Default CLIP backbone, can be overridden (e.g., "RN50")
+# feature_dim: 512 # CLIP embedding dimension, depends on clip_model_name (ViT-B/32 is 512, RN50 is 1024)
+
+# --- RAC Specific Module Settings (Conceptual, assuming RAC-like structure) ---
+# These would be enabled/configured in the specific RAC model config.
+# This section acts more as a placeholder for common RAC parameters if they exist.
+rac_modules:
+  mfa: # Multi-Feature Aggregation (formerly MAF)
+    enabled: true
+    # fusion_type: "WF" # 'WF' (Weighted Fusion) or 'LF' (Learnable Fusion)
+    # projector_type: "attention_pool" # 'attention_pool' for ResNet, 'linear' for ViT
+    # num_levels: 4 # Number of feature levels to fuse
+    # adapter_bottleneck_ratio: 0.5
+  ira: # Inter-class Ambiguity Reduction (formerly ICD)
+    enabled: true
+    # adapter_bottleneck_ratio: 0.5
+  alf: # Adaptive Logits Fusion
+    enabled: true
+    # adapter_bottleneck_ratio: 0.5 # For the alpha generator's internal adapter
+
+# --- Training Settings ---
+epochs: 50
+batch_size: 64 # For standard training; for few-shot, this might refer to batch of tasks
+optimizer: "AdamW"
+learning_rate: 0.001
+# weight_decay: 0.01
+# lr_scheduler: "cosine" # e.g., 'step', 'cosine', 'none'
+# warmup_epochs: 5
+
+# --- Loss Settings (Conceptual, assuming RAC-like losses) ---
+# lambda_tradeoff_similarity: 1.0 # Trade-off for the similarity loss (L_sim)
+
+# --- Logging and Saving ---
+log_dir: "./results/logs/"
+# checkpoint_dir: "./saved_models/"
+# log_interval: 10 # Log every N batches
+# save_best_only: true
+# early_stopping_patience: null # Number of epochs for early stopping
+
+# --- Evaluation Settings ---
+# eval_batch_size: 64
+# metrics: ["accuracy", "precision_recall_f1"]
+
+# --- Environment Settings ---
+# device: "cuda" # "cuda" or "cpu"
+# gpus: [0] # List of GPU IDs to use if device is "cuda"

@@ -1,0 +1,11 @@
+image_path,true_label_id,true_label_name,predicted_label_id,predicted_label_name,logit_class_0,logit_class_1,softmax_prob_class_0,softmax_prob_class_1
+data/raw/authentic_product_A/test_img_001.jpg,0,authentic_product_A,0,authentic_product_A,2.53,-1.50,0.9825,0.0175
+data/raw/authentic_product_A/test_img_002.jpg,0,authentic_product_A,0,authentic_product_A,1.89,-0.92,0.9430,0.0570
+data/raw/authentic_product_A/test_img_003.jpg,0,authentic_product_A,1,counterfeit_product_A,-0.50,0.20,0.3318,0.6682
+data/raw/counterfeit_product_A/test_img_004.jpg,1,counterfeit_product_A,1,counterfeit_product_A,-2.10,2.95,0.0063,0.9937
+data/raw/counterfeit_product_A/test_img_005.jpg,1,counterfeit_product_A,1,counterfeit_product_A,-1.75,2.50,0.0147,0.9853
+data/raw/authentic_product_A/test_img_006.jpg,0,authentic_product_A,0,authentic_product_A,3.10,-2.00,0.9940,0.0060
+data/raw/counterfeit_product_A/test_img_007.jpg,1,counterfeit_product_A,0,authentic_product_A,0.80,0.15,0.6570,0.3430
+data/raw/authentic_product_A/test_img_008.jpg,0,authentic_product_A,0,authentic_product_A,2.20,-1.80,0.9820,0.0180
+data/raw/counterfeit_product_A/test_img_009.jpg,1,counterfeit_product_A,1,counterfeit_product_A,-2.50,3.00,0.0041,0.9959
+data/raw/authentic_product_A/test_img_010.jpg,0,authentic_product_A,0,authentic_product_A,1.95,-1.20,0.9592,0.0408

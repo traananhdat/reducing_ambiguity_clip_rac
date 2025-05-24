@@ -1,0 +1,72 @@
+2025-05-24 21:50:00,123 - rac_resnet50_product_A_16shot - INFO - Logger 'rac_resnet50_product_A_16shot' initialized. Logging to console and file: ./results/logs/rac_resnet50_product_A_16shot_20250524_215000.log
+2025-05-24 21:50:00,125 - rac_resnet50_product_A_16shot - INFO - Starting training loop...
+2025-05-24 21:50:00,125 - rac_resnet50_product_A_16shot - INFO - Configuration:
+# (Your YAML config would be dumped here by the logger, omitting for brevity)
+# experiment_name: rac_resnet50_product_A_16shot
+# ... other config ...
+2025-05-24 21:50:00,128 - rac_resnet50_product_A_16shot - INFO - Using device: cuda
+2025-05-24 21:50:01,200 - rac_resnet50_product_A_16shot - INFO - Loading data...
+2025-05-24 21:50:02,300 - rac_resnet50_product_A_16shot - INFO - CLIP model 'RN50' loaded successfully.
+2025-05-24 21:50:02,500 - rac_resnet50_product_A_16shot - INFO - Generated text features for 2 classes.
+2025-05-24 21:50:02,800 - rac_resnet50_product_A_16shot - INFO - Initializing model...
+2025-05-24 21:50:03,100 - rac_resnet50_product_A_16shot - INFO - Optimizer: AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    lr: 0.0008
+    maximize: False
+    weight_decay: 0.01
+)
+2025-05-24 21:50:03,101 - rac_resnet50_product_A_16shot - INFO - Scheduler: CosineAnnealingLR
+2025-05-24 21:50:03,102 - rac_resnet50_product_A_16shot - INFO - Learnable parameters: 1578498 # Example number
+2025-05-24 21:50:03,103 - rac_resnet50_product_A_16shot - INFO -
+--- Epoch 1/5 ---
+2025-05-24 21:50:03,105 - rac_resnet50_product_A_16shot - DEBUG - Epoch 1, Batch 0/100, Batch Loss: 0.7812
+2025-05-24 21:50:08,500 - rac_resnet50_product_A_16shot - INFO - Epoch 1 - Train Metrics: train_loss_total: 0.6950, train_accuracy: 55.1234, train_loss_ce_mfa: 0.3012, train_loss_ce_ira: 0.3033, train_loss_ce_alf: 0.6850, train_loss_total_sim: 0.0100, train_loss_alpha_mean: 0.5123
+2025-05-24 21:50:09,800 - rac_resnet50_product_A_16shot - INFO - Epoch 1 - Validation Metrics: val_loss_total: 0.6500, val_accuracy: 60.4567, val_loss_ce_mfa: 0.2900, val_loss_ce_ira: 0.2950, val_loss_ce_alf: 0.6400, val_loss_total_sim: 0.0100, val_loss_alpha_mean: 0.5050
+2025-05-24 21:50:09,801 - rac_resnet50_product_A_16shot - INFO - New best model saved with validation metric: 60.4567
+2025-05-24 21:50:09,802 - rac_resnet50_product_A_16shot - INFO - Epoch 1 completed in 6.70s. Best Val Metric: 60.4567
+2025-05-24 21:50:09,803 - rac_resnet50_product_A_16shot - INFO - Epoch 1: Learning rate for group 0 is 7.98e-04
+
+2025-05-24 21:50:09,805 - rac_resnet50_product_A_16shot - INFO -
+--- Epoch 2/5 ---
+2025-05-24 21:50:09,806 - rac_resnet50_product_A_16shot - DEBUG - Epoch 2, Batch 0/100, Batch Loss: 0.5512
+2025-05-24 21:50:15,200 - rac_resnet50_product_A_16shot - INFO - Epoch 2 - Train Metrics: train_loss_total: 0.5500, train_accuracy: 70.1234, train_loss_ce_mfa: 0.2512, train_loss_ce_ira: 0.2533, train_loss_ce_alf: 0.5400, train_loss_total_sim: 0.0100, train_loss_alpha_mean: 0.4888
+2025-05-24 21:50:16,500 - rac_resnet50_product_A_16shot - INFO - Epoch 2 - Validation Metrics: val_loss_total: 0.5000, val_accuracy: 75.4567, val_loss_ce_mfa: 0.2300, val_loss_ce_ira: 0.2350, val_loss_ce_alf: 0.4900, val_loss_total_sim: 0.0100, val_loss_alpha_mean: 0.4912
+2025-05-24 21:50:16,501 - rac_resnet50_product_A_16shot - INFO - New best model saved with validation metric: 75.4567
+2025-05-24 21:50:16,502 - rac_resnet50_product_A_16shot - INFO - Epoch 2 completed in 6.70s. Best Val Metric: 75.4567
+2025-05-24 21:50:16,503 - rac_resnet50_product_A_16shot - INFO - Epoch 2: Learning rate for group 0 is 7.90e-04
+
+2025-05-24 21:50:16,505 - rac_resnet50_product_A_16shot - INFO -
+--- Epoch 3/5 ---
+2025-05-24 21:50:16,506 - rac_resnet50_product_A_16shot - DEBUG - Epoch 3, Batch 0/100, Batch Loss: 0.4012
+2025-05-24 21:50:21,900 - rac_resnet50_product_A_16shot - INFO - Epoch 3 - Train Metrics: train_loss_total: 0.4200, train_accuracy: 80.1234, train_loss_ce_mfa: 0.2012, train_loss_ce_ira: 0.2033, train_loss_ce_alf: 0.4100, train_loss_total_sim: 0.0100, train_loss_alpha_mean: 0.4555
+2025-05-24 21:50:23,200 - rac_resnet50_product_A_16shot - INFO - Epoch 3 - Validation Metrics: val_loss_total: 0.3800, val_accuracy: 82.4567, val_loss_ce_mfa: 0.1800, val_loss_ce_ira: 0.1850, val_loss_ce_alf: 0.3700, val_loss_total_sim: 0.0100, val_loss_alpha_mean: 0.4601
+2025-05-24 21:50:23,201 - rac_resnet50_product_A_16shot - INFO - New best model saved with validation metric: 82.4567
+2025-05-24 21:50:23,202 - rac_resnet50_product_A_16shot - INFO - Epoch 3 completed in 6.70s. Best Val Metric: 82.4567
+2025-05-24 21:50:23,203 - rac_resnet50_product_A_16shot - INFO - Epoch 3: Learning rate for group 0 is 7.76e-04
+
+2025-05-24 21:50:23,205 - rac_resnet50_product_A_16shot - INFO -
+--- Epoch 4/5 ---
+2025-05-24 21:50:23,206 - rac_resnet50_product_A_16shot - DEBUG - Epoch 4, Batch 0/100, Batch Loss: 0.3512
+2025-05-24 21:50:28,600 - rac_resnet50_product_A_16shot - INFO - Epoch 4 - Train Metrics: train_loss_total: 0.3700, train_accuracy: 83.1234, train_loss_ce_mfa: 0.1712, train_loss_ce_ira: 0.1733, train_loss_ce_alf: 0.3600, train_loss_total_sim: 0.0100, train_loss_alpha_mean: 0.4332
+2025-05-24 21:50:29,900 - rac_resnet50_product_A_16shot - INFO - Epoch 4 - Validation Metrics: val_loss_total: 0.3650, val_accuracy: 82.0000, val_loss_ce_mfa: 0.1750, val_loss_ce_ira: 0.1780, val_loss_ce_alf: 0.3550, val_loss_total_sim: 0.0100, val_loss_alpha_mean: 0.4410
+2025-05-24 21:50:29,902 - rac_resnet50_product_A_16shot - INFO - Epoch 4 completed in 6.70s. Best Val Metric: 82.4567
+2025-05-24 21:50:29,903 - rac_resnet50_product_A_16shot - INFO - Epoch 4: Learning rate for group 0 is 7.56e-04
+
+2025-05-24 21:50:29,905 - rac_resnet50_product_A_16shot - INFO -
+--- Epoch 5/5 ---
+2025-05-24 21:50:29,906 - rac_resnet50_product_A_16shot - DEBUG - Epoch 5, Batch 0/100, Batch Loss: 0.3312
+2025-05-24 21:50:35,300 - rac_resnet50_product_A_16shot - INFO - Epoch 5 - Train Metrics: train_loss_total: 0.3500, train_accuracy: 84.1234, train_loss_ce_mfa: 0.1612, train_loss_ce_ira: 0.1633, train_loss_ce_alf: 0.3400, train_loss_total_sim: 0.0100, train_loss_alpha_mean: 0.4111
+2025-05-24 21:50:36,600 - rac_resnet50_product_A_16shot - INFO - Epoch 5 - Validation Metrics: val_loss_total: 0.3580, val_accuracy: 83.1000, val_loss_ce_mfa: 0.1700, val_loss_ce_ira: 0.1720, val_loss_ce_alf: 0.3480, val_loss_total_sim: 0.0100, val_loss_alpha_mean: 0.4200
+2025-05-24 21:50:36,601 - rac_resnet50_product_A_16shot - INFO - New best model saved with validation metric: 83.1000
+2025-05-24 21:50:36,602 - rac_resnet50_product_A_16shot - INFO - Epoch 5 completed in 6.70s. Best Val Metric: 83.1000
+2025-05-24 21:50:36,603 - rac_resnet50_product_A_16shot - INFO - Epoch 5: Learning rate for group 0 is 7.32e-04
+2025-05-24 21:50:36,800 - rac_resnet50_product_A_16shot - INFO - Checkpoint saved to ./saved_models/rac_resnet50_product_A_16shot/checkpoint_epoch_5.pth.tar
+2025-05-24 21:50:36,900 - rac_resnet50_product_A_16shot - INFO - Training completed.
+2025-05-24 21:50:36,901 - rac_resnet50_product_A_16shot - INFO - Best validation metric achieved: 83.1000

@@ -1,0 +1,34 @@
+# Core Deep Learning and Data Handling
+torch>=1.12.0,<2.0.0 # Or a more recent stable version like >=2.0.0
+torchvision>=0.13.0,<1.0.0 # Match with torch version, or >=0.15.0 for torch 2.x
+numpy>=1.21.0,<1.27.0
+pandas>=1.4.0,<2.3.0
+Pillow>=9.0.0,<11.0.0 # For image processing
+
+# Configuration and Utilities
+PyYAML>=6.0,<7.0
+tqdm>=4.60.0,<5.0.0 # For progress bars
+scikit-learn>=1.0.0,<1.6.0 # For metrics like classification_report, confusion_matrix
+
+# Visualization
+matplotlib>=3.5.0,<3.10.0
+seaborn>=0.11.0,<0.14.0
+
+# CLIP model (OpenAI's version)
+# Note: This installs directly from GitHub.
+# For more stable or alternative CLIP versions (like open_clip), adjust accordingly.
+# Check the official CLIP repository for the latest commit hash if needed.
+git+https://github.com/openai/CLIP.git
+
+# Jupyter Notebook/Lab (for running notebooks)
+# Optional, not strictly needed for core model training/evaluation scripts
+# jupyterlab>=3.0.0,<5.0.0
+# notebook>=6.0.0,<8.0.0
+
+# Optional: for open_clip if you decide to use it as an alternative
+# open_clip_torch>=2.7.0,<2.21.0 # Example version, check latest
+
+# Optional: for specific linters or code formatters if you use them in your dev workflow
+# flake8
+# black
+# isort

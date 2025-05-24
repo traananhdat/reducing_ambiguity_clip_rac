@@ -1,0 +1,57 @@
+# src/configs/rac_vit_b_16_config.yaml
+# Specific Configuration for RAC with ViT-B/16
+
+# --- General Project Settings ---
+experiment_name: "rac_vit_b16_agricultural_product_B_8shot" # Example: More descriptive name
+seed: 246 # Specific seed for this experiment run for reproducibility
+
+# --- Data Settings ---
+dataset_name: "product_B_quality_grades" # Name of the specific dataset being used
+num_classes: 3 # Example: Grade_A, Grade_B, Grade_C for Product B
+image_size: 224 # Standard for ViT-B/16 used with CLIP, but verify if different for your setup
+
+# --- Few-Shot Learning Settings (if this is a few-shot experiment) ---
+# n_shot: 8
+# n_way: 3 # Matching num_classes for this specific task
+# n_query: 10
+
+# --- Model Settings ---
+clip_model_name: "ViT-B/16" # Specifies ViT-B/16 as the CLIP backbone
+feature_dim: 512 # Output dimension of CLIP's ViT-B/16 image encoder
+
+# --- RAC Specific Module Settings ---
+# Assuming RAC conceptually mirrors RAC's modules (MFA, IRA, ALF)
+# Enable and configure modules as needed for this ViT-B/16 based experiment.
+rac_modules:
+  mfa: # Multi-Feature Aggregation (conceptual equivalent of MAF)
+    enabled: true
+    fusion_type: "LF" # Learnable Fusion, as an example. Could be "WF" (Weighted Fusion).
+    projector_type: "linear" # Typically used with ViT architectures in CLIP. [cite: 90]
+    num_levels: 4 # Number of transformer blocks' outputs to consider (e.g., last 4 blocks).
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within MFA.
+  ira: # Inter-class Ambiguity Reduction (conceptual equivalent of ICD)
+    enabled: true
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within IRA.
+  alf: # Adaptive Logits Fusion
+    enabled: true
+    adapter_bottleneck_ratio: 0.5 # Bottleneck ratio for adapters within the alpha generator.
+
+# --- Training Settings ---
+# Override base settings if necessary for this specific backbone or dataset
+epochs: 60
+batch_size: 48 # Adjust based on GPU memory with ViT-B/16
+learning_rate: 0.0009 # Fine-tune learning rate for ViT-B/16
+# weight_decay: 0.01
+# lr_scheduler: "cosine"
+# warmup_epochs: 4
+
+# --- Loss Settings ---
+# Assuming similar loss structure to RAC
+lambda_tradeoff_similarity: 0.9 # Specific trade-off for the similarity loss for this run
+
+# --- Logging and Saving ---
+# checkpoint_dir: "./saved_models/rac_vit_b16_runs/" # More specific checkpoint directory
+
+# --- Environment Settings ---
+# device: "cuda"
+# gpus: [0] # Specify GPU to use
