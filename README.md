@@ -14,6 +14,7 @@ This repository provides the code for:
 ## Project Structure
 
 ```
+```
 reducing_ambiguity_clip_rac/
 ├── data/                     # Datasets (raw, processed, few-shot splits)
 │   ├── processed/
@@ -37,6 +38,7 @@ reducing_ambiguity_clip_rac/
 ├── main.py                   # Main script to run training, evaluation, preprocessing
 ├── requirements.txt          # Python package dependencies
 └── README.md                 # This file
+```
 ```
 
 ## Setup
