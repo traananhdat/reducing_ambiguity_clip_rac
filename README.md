@@ -44,7 +44,7 @@ reducing_ambiguity_clip_rac/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/traananhdat/reducing_ambiguity_clip_rac.git
 cd reducing_ambiguity_clip_rac
 ```
 
